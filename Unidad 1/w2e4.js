@@ -1,0 +1,11 @@
+var celsius = 20;
+document.write("<h1>EJERCICIO TEMPERATURAS</h1>");
+document.write("<h2>Celsius a Farenheit</h2>");
+document.write("Celsius=" + celsius);
+document.write("<br>");
+document.write("Farenheit=" + ((celsius*1.8)+32));
+var farenheit = 20;
+document.write("<h2>Farenheit a Celsius</h2>");
+document.write("Farenheit=" + farenheit);
+document.write("<br>");
+document.write("Celsius=" + ((farenheit-32)/1.8));

@@ -115,7 +115,14 @@ mayusMinus("VIYUELA CHICOTE");
 
 
 
+// Ejercicio 9
 
+document.write('<h3>Word in a Box</h3>');
 
+function boxWord(arg){
+    var arr = arg.split();
+
+    for(let i=)
+}
 
 // WS4 E1,2 - WS6 E2c,d,e,f
