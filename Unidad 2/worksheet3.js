@@ -59,7 +59,7 @@ function palabraMasLarga(arg){
 palabraMasLarga("Me gustaría lamer un polo de limon en el lago de liliput");
 
 
-// Ejercicio 2
+// Ejercicio 2 NEED FIX
 
 document.write('<h3>Mayúsculas o minúsculas...</h3>');
 
@@ -120,9 +120,55 @@ mayusMinus("VIYUELA CHICOTE");
 document.write('<h3>Word in a Box</h3>');
 
 function boxWord(arg){
-    var arr = arg.split();
+    var arr=[];
 
-    for(let i=)
+    for(var i=0; i<=arg.length-1; i++){
+        arr[i]=arg.charAt(i);
+    }
+
+    var aux=arg.length;
+    console.log(aux);
+
+    console.log(arr);
+
+    document.write('<table border="2" cellspading="2">');
+    document.write('<tr height="40">');
+    for(let i=0; i<=arr.length-1; i++){
+        document.write('<td width="40">');
+        document.write(arr[i]);
+        document.write('</td>');
+    }
+    document.write('<tr>');
+    
+    for(let j=0; j<=arr.length-3; j++){
+        document.write('<tr height="40">');
+
+        document.write('<td width="40">');
+        document.write(arr[j+1]);
+        document.write('</td>');
+
+        for(let k=0; k<=arr.length-3; k++){
+            document.write('<td width="40">&nbsp;</td>');
+        }
+
+        console.log(aux);
+        document.write('<td width="40">');
+        document.write(arr[aux-2]);
+        document.write('</td>');
+        aux--;
+        console.log(aux);
+
+        document.write('<tr>');
+    }
+
+    document.write('<tr height="40">');
+    for(let i=arr.length-1; i>=0; i--){
+        document.write('<td width="40">');
+        document.write(arr[i]);
+        document.write('</td>');
+    }
+    document.write('<tr>');
+    document.write("</table>");
 }
 
-// WS4 E1,2 - WS6 E2c,d,e,f
+boxWord("HELLO");
