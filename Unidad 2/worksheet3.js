@@ -81,9 +81,9 @@ function esMinuscula(letra){
 
 function mayusMinus(arg){
     var auxMayus=0;
-    var auxMinus=0;
+    var auxMinus=0;    
 
-    for(let i=0; i<=arg.length; i++){
+    for(let i=0; i<arg.length; i++){
         letraAux = arg.charAt(i);
 
         if(esMayuscula(letraAux)){
@@ -109,9 +109,9 @@ function mayusMinus(arg){
     }
 }
 
-mayusMinus("Alberto Chicote");
-mayusMinus("pepe viyuela");
-mayusMinus("VIYUELA CHICOTE");
+mayusMinus("AlbertoChicote");
+mayusMinus("pepeviyuela");
+mayusMinus("VIYUELACHICOTE");
 
 
 
