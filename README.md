@@ -1,2 +1,2 @@
 # DWEC
-Place where I am gonna upload all my class excercices.
+Place where I am gonna upload all my class excercices (JavaScript).
