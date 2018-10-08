@@ -58,3 +58,35 @@ function diceSimulator(){
 }
 
 diceSimulator();
+
+
+document.write("<h3>Exercise 3</h3>");
+
+function potency(x, y=1){
+    auxX = 1;
+    if(y == 1){
+        auxX = x;
+    }else{
+        auxX = x * potency(x, y-1);
+    }
+    return auxX;
+    console.log(auxX);
+}
+
+potency(4);
+
+
+document.write("<h3>Exercise 4</h3>");
+
+function factorial(x){
+    auxX = 1;
+    if(x == 1){
+        auxX = x*1
+    }else{
+        auxX = x * factorial(x-1);
+    }
+    return auxX;
+    console.log(auxX);
+}
+
+factorial(4);
