@@ -46,4 +46,27 @@ function arrModify(){
     for(let i=0; i<arr.length; i++){
         arr[i]=arr[i]+1;
     }
+
+    document.write(arr.join(" "));
+}
+
+
+document.write("<h3>Exercise 3</h3>");
+
+function simulationTwoDices(){
+    var arr = [];
+    var values = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    for(let i=0; i<36000; i++){
+        var diceOne = parseInt(Math.random()*6+1);
+        var diceTwo = parseInt(Math.random()*6+1);
+
+        var total = diceOne + diceTwo;
+
+        arr[i] = total; // arr.push(total);
+
+        values[total-2]=(values[total-2]+1);
+    }
+    
+    console.log(values);
 }
