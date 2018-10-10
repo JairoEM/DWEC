@@ -37,10 +37,10 @@ evenOdd();
 document.write("<h3>Exercise 2</h3>");
 
 function arrModify(){
-    var arr = Array(10);
+    var arr = Array();
 
     for(let i=0; i<10; i++){
-        arr[i]=0;
+        arr.unshift(0);
     }
 
     for(let i=0; i<arr.length; i++){
@@ -70,3 +70,25 @@ function simulationTwoDices(){
     
     console.log(values);
 }
+
+simulationTwoDices();
+
+
+document.write("<h3>Exercise 4</h3>");
+
+function simulationDizesSquema(){
+    var dice1Array = [0, 0 ,0 ,0 ,0 ,0];
+    var dice2Array = [0, 0 ,0 ,0 ,0 ,0];
+    var dicesArray = [[dice1Array], [dice2Array]];
+
+    for(let i=0; i<36000; i++){
+        var dice1 = parseInt(Math.random()*6+1);
+        var dice2 = parseInt(Math.random()*6+1);
+
+        dicesArray[dice1-1][dice2-1] = (parseInt(dicesArray[[dice1Array[dices1-1]][dice2Array[dice2-1]]].value) + 1);
+    }
+
+    console.log(dicesArray);
+}
+
+simulationDizesSquema();
