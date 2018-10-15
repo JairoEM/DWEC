@@ -4,12 +4,13 @@ document.write("<h1>Puzzle</h1>");
 
 // Measurement of the puzzle
 
-var columns = prompt("Choose the columns:");
 var rows = prompt("Choose the rows:");
+var columns = prompt("Choose the columns:");
 
 // Construction of the puzzle
 
-class puzzle {
+
+class Puzzle {
     constructor (rows, columns){
         this.rows=rows;
         this.columns=columns;
@@ -26,27 +27,27 @@ class puzzle {
 
         // Mix values of the array
 
-        var j, x, z;
-        for (z = arr.length - 1; z > 0; z--) {
-            j = Math.floor(Math.random() * (z + 1));
-            x = arr[z];
-            arr[z] = arr[j];
-            arr[j] = x;
-        };
+        // var j, x, z;
+        // for (z = arr.length - 1; z > 0; z--) {
+        //     j = Math.floor(Math.random() * (z + 1));
+        //     x = arr[z];
+        //     arr[z] = arr[j];
+        //     arr[j] = x;
+        // };
 
         // Create the table and insert values on the table
 
         var auxCount = 0;
 
-        document.write("<table>");
+        document.write("<table align='center' border=5>");
             for(let i=0; i<rows; i++){
-                document.write("<tr height=20>");
+                document.write("<tr height=40>");
 
                 // Insert the values on every single cell
                 
-                for(let k=0; k<columns; k++){
-                    document.write("<td width=20>");
-                    document.write(""+arr[auxCount]);
+                for(let j=0; j<columns; j++){
+                    document.write("<td align='center' width=40>");
+                    document.write(arr[auxCount]);
                     document.write("</td>");
                     
                     auxCount++;
@@ -57,4 +58,11 @@ class puzzle {
         document.write("</table>");
     };
 
+    moveCero() {
+
+    };
 };
+
+var puzzle1 = new Puzzle(rows, columns);
+
+puzzle1.createPuzzle();
