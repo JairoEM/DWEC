@@ -22,7 +22,7 @@ function iSurnameAprobe(){
 
 function iUserNameAprobe(){
     var value = document.getElementById("iUserName").value;
-    var regExp = new RegExp("^[a-zA-Z]{1,}[0-9]{1,}[/*-_.]{1,}$");
+    var regExp = new RegExp("^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$");
     if(regExp.test(value)){
         document.getElementById("iUserName").style.borderColor = "green";
     }else{
@@ -75,6 +75,7 @@ function formAprobe(){
         iTelephoneAprobe();
         iDNIAprobe();
         iEmailAprobe();
+        alert("Send correctly!")
     }else{
         alert("Fill the empty areas to validate");
     }
