@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./worksheet4B.js"></script>
+    <title>Worksheet 4 Unit 4</title>   
+</head>
+<body>
+    <h1>Worksheet 4 Unit 4</h1>
+
+    <h3>Exercise 2</h3>
+
+    <br>
+
+    <div>
+        <label>Background Color:</label>
+        <br>
+        <input type="text" id="background-color">
+        <br>
+        <input type="submit" value="Create background color cookie" onclick="setCookie('background-color', document.getElementById('background-color').value, 300);">
+        <br>
+        <br>
+        <label>Font Size:</label>
+        <br>
+        <input type="text" id="font-size">
+        <br>
+        <input type="submit" value="Create font size cookie" onclick="setCookie('font-size', document.getElementById('font-size').value, 300);">
+    </div>
+
+    <br>
+    <br>
+
+    <div>
+        <input type="submit" value="Show the cookies" onclick="checkCookieA();checkCookieB();">
+    </div>
+
+    <br>
+    <br>
+
+    <div>
+        <input type="submit" value="Delete the cookies" onclick="deleteCookie('background-color');deleteCookie('font-size');">
+    </div>
+
+    <br>
+    <br>
+
+    <p id="pCookies">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+</body>
+</html>
