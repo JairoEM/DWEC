@@ -27,9 +27,9 @@ function getCookie(cname) {
 
 function checkCookieA() {
     var p = document.getElementById("pCookies");
-    var user=getCookie("background-color");
+    var user = getCookie("background-color");
     if (user != "") {
-        p.style.backgroundColor = document.getElementById("background-color").value;
+        p.style.backgroundColor = user;
     } else {
        if (user != "" && user != null) {
            setCookie('background-color', document.getElementById('background-color').value, 300);
@@ -39,9 +39,9 @@ function checkCookieA() {
 
 function checkCookieB() {
     var p = document.getElementById("pCookies");
-    var user=getCookie("font-size");
+    var user = getCookie("font-size");
     if (user != "") {
-        p.style.fontSize = document.getElementById("font-size").value + "px";
+        p.style.fontSize = getCookie("font-size");
     } else {
        if (user != "" && user != null) {
            setCookie('font-size', document.getElementById('font-size').value +  + "px", 300);
