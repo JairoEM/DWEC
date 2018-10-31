@@ -1,0 +1,15 @@
+div #canvas{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+td{
+    border: solid 2px black;
+    height: 60px;
+    width: 60px;
+}

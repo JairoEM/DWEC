@@ -1,20 +1,19 @@
-/**TIK TAK TOE GAME
+/**TIC TAC TOE GAME
  * 
- * First of all, that game is prepared for 2 players, one will be the cross, the second will be the 
+ * First of all, that game is prepared for 2 players, one will be the x, the second will be the 
  * circles.
  * 
- * It depends on who starts, the first will be the cross every single game, so feel free to change 
+ * It depends on who starts, the first will be the x every single game, so feel free to change 
  * the turn order after every game.
  */
 
-export class tikTakToe{
-
+export class TicTacToe{
     /**
      * Constructor:
      * The tikTakToe constructor makes an empty array, called 'board', which are going to use as a logical 
      * board, and initialize the variable 'turn', that variable is the one that are going to tell to the 
      * game in what turn we are playing, so the game will know if the next piece in the board is going to
-     * be a cross or a circle.
+     * be a x or a circle.
      */
     constructor(){
         this.board = new Array();
@@ -32,7 +31,7 @@ export class tikTakToe{
         for(let i=0; i<3; i++){
             this.board[i]=[];
             for(let j=0; j<3; j++){
-                this.board[i][j]=["Empty"];
+                this.board[i][j]="Empty";
             }
         }
         return this.board;
@@ -50,12 +49,12 @@ export class tikTakToe{
      */
     playerMove(x, y){
         if(this.board[x][y] == "Empty"){
-            if(turn%2 == 0){
+            if(this.turn%2 == 0){
                 this.board[x][y]="Cross";
-                turn++;
+                this.turn++;
             }else{
                 this.board[x][y]="Circle";
-                turn++;
+                this.turn++;
             }
         }else{
             return null;
@@ -69,59 +68,59 @@ export class tikTakToe{
      * @returns {alert} winner
      */
     matchVoucher(){
-        var cross = "Cross";
-        var circle = "Circle";
+        var x = "Cross";
+        var c = "Circle";
         //WIN CONDITIONS
             //ALL CROSS'S WIN CONDITIONS
-            if((this.board[0][0] == cross) && (this.board[1][0] == cross) && (this.board[2][0] == cross)){
-                alert("Cross wins!! Congratulations!!");
+            if((this.board[0][0] == x) && (this.board[1][0] == x) && (this.board[2][0] == x)){
+                return "Cross";
             }
-            if((this.board[0][1] == cross) && (this.board[1][1] == cross) && (this.board[2][1] == cross)){
-                alert("Cross wins!! Congratulations!!");
+            if((this.board[0][1] == x) && (this.board[1][1] == x) && (this.board[2][1] == x)){
+                return "Cross";
             }
-            if((this.board[0][2] == cross) && (this.board[1][2] == cross) && (this.board[2][2] == cross)){
-                alert("Cross wins!! Congratulations!!");
+            if((this.board[0][2] == x) && (this.board[1][2] == x) && (this.board[2][2] == x)){
+                return "Cross";
             }
-            if((this.board[0][0] == cross) && (this.board[0][1] == cross) && (this.board[0][2] == cross)){
-                alert("Cross wins!! Congratulations!!");
+            if((this.board[0][0] == x) && (this.board[0][1] == x) && (this.board[0][2] == x)){
+                return "Cross";
             }
-            if((this.board[1][0] == cross) && (this.board[1][1] == cross) && (this.board[1][2] == cross)){
-                alert("Cross wins!! Congratulations!!");
+            if((this.board[1][0] == x) && (this.board[1][1] == x) && (this.board[1][2] == x)){
+                return "Cross";
             }
-            if((this.board[2][0] == cross) && (this.board[2][1] == cross) && (this.board[2][2] == cross)){
-                alert("Cross wins!! Congratulations!!");
+            if((this.board[2][0] == x) && (this.board[2][1] == x) && (this.board[2][2] == x)){
+                return "Cross";
             }
-            if((this.board[0][0] == cross) && (this.board[1][1] == cross) && (this.board[2][2] == cross)){
-                alert("Cross wins!! Congratulations!!");
+            if((this.board[0][0] == x) && (this.board[1][1] == x) && (this.board[2][2] == x)){
+                return "Cross";
             }
-            if((this.board[0][2] == cross) && (this.board[1][1] == cross) && (this.board[2][0] == cross)){
-                alert("Cross wins!! Congratulations!!");
+            if((this.board[0][2] == x) && (this.board[1][1] == x) && (this.board[2][0] == x)){
+                return "Cross";
             }
 
             //ALL CIRCLE'S WIN CONDITIONS
-            if((this.board[0][0] == circle) && (this.board[1][0] == circle) && (this.board[2][0] == circle)){
-                alert("Circle wins!! Congratulations!!");
+            if((this.board[0][0] == c) && (this.board[1][0] == c) && (this.board[2][0] == c)){
+                return "Circle";
             }
-            if((this.board[0][1] == circle) && (this.board[1][1] == circle) && (this.board[2][1] == circle)){
-                alert("Circle wins!! Congratulations!!");
+            if((this.board[0][1] == c) && (this.board[1][1] == c) && (this.board[2][1] == c)){
+                return "Circle";
             }
-            if((this.board[0][2] == circle) && (this.board[1][2] == circle) && (this.board[2][2] == circle)){
-                alert("Circle wins!! Congratulations!!");
+            if((this.board[0][2] == c) && (this.board[1][2] == c) && (this.board[2][2] == c)){
+                return "Circle";
             }
-            if((this.board[0][0] == circle) && (this.board[0][1] == circle) && (this.board[0][2] == circle)){
-                alert("Circle wins!! Congratulations!!");
+            if((this.board[0][0] == c) && (this.board[0][1] == c) && (this.board[0][2] == c)){
+                return "Circle";
             }
-            if((this.board[1][0] == circle) && (this.board[1][1] == circle) && (this.board[1][2] == circle)){
-                alert("Circle wins!! Congratulations!!");
+            if((this.board[1][0] == c) && (this.board[1][1] == c) && (this.board[1][2] == c)){
+                return "Circle";
             }
-            if((this.board[2][0] == circle) && (this.board[2][1] == circle) && (this.board[2][2] == circle)){
-                alert("Circle wins!! Congratulations!!");
+            if((this.board[2][0] == c) && (this.board[2][1] == c) && (this.board[2][2] == c)){
+                return "Circle";
             }
-            if((this.board[0][0] == circle) && (this.board[1][1] == circle) && (this.board[2][2] == circle)){
-                alert("Circle wins!! Congratulations!!");
+            if((this.board[0][0] == c) && (this.board[1][1] == c) && (this.board[2][2] == c)){
+                return "Circle";
             }
-            if((this.board[0][2] == circle) && (this.board[1][1] == circle) && (this.board[2][0] == circle)){
-                alert("Circle wins!! Congratulations!!");
+            if((this.board[0][2] == c) && (this.board[1][1] == c) && (this.board[2][0] == c)){
+                return "Circle";
             }
         //WIN CONDITIONS
     }
