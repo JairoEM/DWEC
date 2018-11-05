@@ -1,0 +1,7 @@
+#table{
+    border: 4px solid green;
+    width: 600px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+}
