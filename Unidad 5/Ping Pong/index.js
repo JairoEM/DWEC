@@ -9,11 +9,13 @@ function main(){
     var player1 = document.getElementById("player1");
     var player2 = document.getElementById("player2");
     var move = 6;
-    var positionBlue;
-    var positionRed;
+    var positionBlueX;
+    var positionBlueY;
+    var positionRedX;
+    var positionRedY;
     var key;
 
-    document.addEventListener('keydown', function move1(event){
+    document.addEventListener('keydown', function playerMoves(event){
         //Capture the key event
         key = event.keyCode;
 
@@ -44,6 +46,22 @@ function main(){
         }
     });
 
+    //Ball hit the players
+    function playersHit(){
+        if((x - 10) == (positionBlueX + 10)){
+            if((y >= positionBlueY) && (y <= (positionBlueY + 80))){
+                speedX = Math.abs(speedX);
+            }
+        }
+
+        if((x + 10) == (positionRedX)){
+            if((y >= positionRedY) && (y <= (positionRedY + 80))){
+                speedX = speedX * (-1);
+            }
+        }
+        ball.setAttribute("cx", x + speedX);
+    }
+
     //Ball hit the right or left walls
     function moveX(){
         if(x >= table.getAttribute("width")-10){
@@ -67,10 +85,20 @@ function main(){
     }
 
     setInterval( () => {
+        positionBlueX = parseInt(player1.getAttribute("x"));
+        positionBlueY = parseInt(player1.getAttribute("y"));
+        console.log(positionBlueY);
+
+        positionRedX = parseInt(player2.getAttribute("x"));
+        positionRedY = parseInt(player2.getAttribute("y"));
+        console.log(positionRedY);
+
         x = parseInt(ball.getAttribute("cx"));
         y = parseInt(ball.getAttribute("cy"));
+
         moveY();
         moveX();
+        playersHit();
     }, 5);
 }
 
