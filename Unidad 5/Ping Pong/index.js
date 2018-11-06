@@ -101,21 +101,3 @@ function main(){
         playersHit();
     }, 5);
 }
-
-
-// position1 = document.getElementById("player1").getAttribute("x");
-// if(event.keyCode == 87){
-//     player1.setAttribute("x", (position1 + 100));
-//     //DUDA IMPORTANTE, POR QUÉ SE PONE RETURN FALSE?!
-// }
-
-
-// document.addEventListener('keydown', function move1(event){
-//     key1 = event.keyCode;
-// });
-// function movePlayer1(){
-//     if(key1 == 87){
-//         player1.setAttribute("x", (player1.getAttribute("x") + 100));
-//     }
-// }
-// movePlayer1;
