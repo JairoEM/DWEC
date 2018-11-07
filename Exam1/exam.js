@@ -134,10 +134,32 @@ function ejercicio6(event){
         document.getElementById("ejercicio6Rellena").innerHTML = " ";
         document.getElementById("ejercicio6Text").innerHTML = " ";
     }else{  
-        document.getElementById("ejercicio6Rellena").innerHTML = "Está escribiendo...";
-        clearTimeout(wapp);        
-        wapp = setInterval( () => {
+        document.getElementById("ejercicio6Rellena").innerHTML = "Está escribiendo...";       
+        setInterval(ejercicio6, 3000);
+        if(wapp >= 4){
             document.getElementById("ejercicio6Rellena").innerHTML = " ";
-        }, 3000);
+        }
     }
 }
+
+var timeAux;
+function timeoutWrite(){
+    clearTimeout(timeAux);
+}
+document.addEventListener("keydown",(event) => {
+    var key = event.keyCode;
+
+    if(key == 13){
+        document.getElementById("ejercicio6Rellena").innerHTML = " ";
+        document.getElementById("ejercicio6Text").value = " ";                   
+    }else{
+        timeoutWrite(); 
+        document.getElementById("ejercicio6Rellena").innerHTML = "Está escribiendo..."; 
+    }
+});
+
+document.addEventListener("keyup",() => {
+    timeAux = setTimeout(() => {
+        document.getElementById("ejercicio6Rellena").innerHTML = " ";
+    }, 3000);
+});
