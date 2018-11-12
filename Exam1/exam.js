@@ -26,7 +26,7 @@ function ejercicio3(url, num){
     document.write("Segundo actual del sistema " + segundos + "<br>");
 
     if(segundos <= 60){
-        setTimeout(ejercicio3, 2000);
+        setTimeout(ejercicio3, num*1000, url, num);
     }else{
         window.location.replace(url);
     }
@@ -61,7 +61,7 @@ class Bolitas{
     }
 
     buscarBolaporRadio(radio){
-        var auxBolasCount;
+        var auxBolasCount = 0;
         var arrayBolasCount = new Array();
 
         for(let i = 0; i<= this.arrayBolas.length-1; i++){
@@ -132,7 +132,7 @@ function ejercicio6(event){
 
     if(key == 13){
         document.getElementById("ejercicio6Rellena").innerHTML = " ";
-        document.getElementById("ejercicio6Text").innerHTML = " ";
+        document.getElementById("ejercicio6Text").value = " ";
     }else{  
         document.getElementById("ejercicio6Rellena").innerHTML = "Está escribiendo...";       
         setInterval(ejercicio6, 3000);
