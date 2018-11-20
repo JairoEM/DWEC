@@ -42,7 +42,7 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
 
     var data = google.visualization.arrayToDataTable([
-        ['Party', '2018 Votes',],
+        ['Party', '2018 Votes'],
         ['PP', 137],
         ['PSOE', 85],
         ['UNIDOS PODEMOS', 71],
@@ -55,7 +55,7 @@ function drawChart() {
     ]);
 
     var options = {
-        title: 'Spanish Deputies Congress'
+        title: 'Spanish Deputies Congress'º
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
