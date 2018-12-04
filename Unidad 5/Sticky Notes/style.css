@@ -1,0 +1,32 @@
+body{
+    background-image: url("./corcho.jpg");
+}
+
+h3{
+    margin: 5px;
+}
+
+#new{
+    width: 300px;
+    justify-content: center;
+    align-content: center;
+    border: 2px solid black;
+    background: lightblue;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    padding: 0px 20px 20px 20px;
+}
+
+#notes div{
+    border: 1px solid black;
+    background: lightyellow;
+    border-radius: 5px;
+    padding: 0px 5px 5px 5px;
+    margin: 5px;
+}
+
+#notes{
+    display: flex;
+    flex-flow: row wrap;
+}

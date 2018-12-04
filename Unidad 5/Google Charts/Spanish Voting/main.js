@@ -55,10 +55,44 @@ function drawChart() {
     ]);
 
     var options = {
-        title: 'Spanish Deputies Congress'º
+        title: 'Spanish Deputies Congress'
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
     chart.draw(data, options);
 }
+
+setTimeout( function drawBasic(){
+    var data = google.visualization.arrayToDataTable([
+        ['Party', '2018 Votes',],
+        ['PP', 10],
+        ['PSOE', 95],
+        ['UNIDOS PODEMOS', 171],
+        ["C's", 12],
+        ['ESQUERRA', 6],
+        ['CDC', 2],
+        ['EAJ-PNV', 2],
+        ['EH-BILDU', 1],
+        ['Others', 1]
+    ]);
+
+    var options = {
+        title: 'Spanish Deputies Congress',
+        chartArea: {
+            width: '50%'
+        },
+        hAxis: {
+            title: 'Total Population',
+            minValue: 0
+        },
+        vAxis: {
+            title: 'Party'
+        },
+        height: 300
+    };
+
+    var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+}, 2000)
