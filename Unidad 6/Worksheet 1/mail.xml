@@ -29,16 +29,4 @@
         <heading>Remember</heading>
         <body>Don't forget me this weekend!</body>
     </mail>
-    <mail>
-        <to>Juan</to>
-        <from>Pepe</from>
-        <heading>Remember</heading>
-        <body>Don't forget me this weekend!</body>
-    </mail>
-    <mail>
-        <to>ASD</to>
-        <from>ASD</from>
-        <heading>ASD</heading>
-        <body>Don't forget me this weekend!</body>
-    </mail>
 </mails>

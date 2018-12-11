@@ -1,0 +1,20 @@
+[
+    {
+        "nombre" : "Mesón 1",
+        "direccion" : "c/ Mesones 123",
+        "web" : "http://meson1.es",
+        "imagenes" : "http://www.palenciadigital.com/mesondevillasirga/files/meson-templarios-intrenet-709.JPG"
+    },
+    {
+        "nombre" : "Mesón 2",
+        "direccion" : "c/ Mesones 456",
+        "web" : "http://meson2.es",
+        "imagenes" : "https://media-cdn.tripadvisor.com/media/photo-s/01/cf/cf/00/meson-julian.jpg"
+    },
+    {
+        "nombre" : "Mesón 3",
+        "direccion" : "c/ Mesones 789",
+        "web" : "http://meson3.es",
+        "imagenes" : "https://u.tfstatic.com/restaurant_photos/045/27045/169/612/meson-txistu-vista-sala-d9cb2.jpg"
+    }
+]
