@@ -99,5 +99,5 @@ function main(){
         moveY();
         moveX();
         playersHit();
-    }, 5);
+    }, 500);
 }

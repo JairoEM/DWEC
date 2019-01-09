@@ -5,3 +5,8 @@
     display: flex;
     justify-content: center;
 }
+
+#lidl{
+    width: 600px;
+    height: 600px;
+}
