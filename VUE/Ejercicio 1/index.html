@@ -37,6 +37,21 @@
         <button v-on:click="reverseMessage">Reverse Message</button>
     </div>
 
+    <div id="mainApp">
+        <mitag></mitag>
+
+        {{ rawHtml }}
+        <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+
+        <p>If try: <span v-if="seeTag">It is true</span><span v-else="seeTag">It is false</span></p>
+
+        <br>
+
+        <a v-for="enlace in enlaces" v-bind:href="enlace.url"> {{ enlace.textUrl }} </a>
+    </div>
+
+    
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
     <script src="./main.js"></script>
 </body>

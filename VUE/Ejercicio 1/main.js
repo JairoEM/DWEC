@@ -1,3 +1,30 @@
+Vue.component('mitag', {
+    template: '<h1>This is a todo</h1>'
+});
+
+
+var mainApp = new Vue({
+    el: "#mainApp",
+    data: {
+        rawHtml: "<h1>Hello</h1>",
+        seeTag: false,
+        enlaces: [
+            {textUrl: "Click here to Google",
+            url: "http://www.google.es"},
+            {textUrl: "Click here to Github",
+            url: "https://github.com/"}
+        ],
+        textUrl: "Click here",
+        url: "http://www.google.es"
+    }
+});
+
+
+
+
+
+// DÍA UNO
+
 var app = new Vue({
     el: '#app',
     data: {
