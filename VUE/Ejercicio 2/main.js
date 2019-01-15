@@ -28,8 +28,7 @@ var exercise2 = new Vue ({
         taskToDo: function(tasks){
             var count = 0;
             for(let i=0; i<this.tasks.length; i++){
-                if(this.tasks[i].status == false){
-                    
+                if(this.tasks[i].status == false){  
                     count++;
                 }
             }
