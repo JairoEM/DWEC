@@ -29,7 +29,7 @@
         <button type="submit" value="Create" v-on:click="newTask">Create</button>
 
         <p>Tasks number: {{ tasks.length }}</p>
-        <p>Tasks to do: {{ countTasks }}</p>
+        <p>Tasks to do: {{ taskToDo(tasks) }}</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  

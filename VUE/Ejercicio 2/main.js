@@ -15,8 +15,7 @@ var exercise2 = new Vue ({
                 status: true
             }
         ],
-        textNewTask: "",
-        countTasks: ""
+        textNewTask: ""
     },
     methods: {
         newTask: function(event){
@@ -26,15 +25,15 @@ var exercise2 = new Vue ({
             var status = false;
             this.tasks.push({order, date, priority, status});
         },
-        function(){
-            var count;
-            for(let i=0; i<=this.tasks.length; i++){
-                if(this.tasks.status == true){
+        taskToDo: function(tasks){
+            var count = 0;
+            for(let i=0; i<this.tasks.length; i++){
+                if(this.tasks[i].status == false){
+                    
                     count++;
                 }
             }
-            this.countTasks = count;
-            return countTasks;
+            return count;
         }
     }
 });
