@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Actividad 2 VUE</title>
+</head>
+<body>
+    <!-- TASKS -->
+    <h1>TASKS</h1>
+
+    <div id="e2">
+        <ul>
+            <li v-for="task in tasks">
+                <h3>{{ task.order }}</h3>
+                <p>Priority: {{ task.priority }}</p>
+                <p>Date: {{ task.date }}</p>
+                <p>Status: 
+                    <span v-if="task.status">Completed</span>
+                    <span v-else>Not Completed</span>
+                </p>
+            </li>
+        </ul>
+
+        <h2>New Task</h2>
+
+        <input type="text" name="" v-model="textNewTask" placeholder="New Task">
+        <button type="submit" value="Create" v-on:click="newTask">Create</button>
+
+        <p>Tasks number: {{ tasks.length }}</p>
+        <p>Tasks to do: {{ countTasks }}</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
+    <script src="./main.js"></script>
+</body>
+</html>
