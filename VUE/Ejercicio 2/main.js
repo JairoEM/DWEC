@@ -1,3 +1,8 @@
+Vue.component("comp",{
+    template: "#otro-template",
+    props: ["accion"]
+});
+
 var exercise2 = new Vue ({
     el: "#e2",
     data: {
@@ -15,7 +20,10 @@ var exercise2 = new Vue ({
                 status: true
             }
         ],
-        textNewTask: ""
+        textNewTask: "",
+        checkedStatus: [],
+        completedTasks: [],
+        incompletedTasks: []
     },
     methods: {
         newTask: function(event){
@@ -25,7 +33,7 @@ var exercise2 = new Vue ({
             var status = false;
             this.tasks.push({order, date, priority, status});
         },
-        taskToDo: function(tasks){
+        taskToDo: function(){
             var count = 0;
             for(let i=0; i<this.tasks.length; i++){
                 if(this.tasks[i].status == false){  
@@ -33,6 +41,11 @@ var exercise2 = new Vue ({
                 }
             }
             return count;
+        },
+        checkedTask: function(){
+            completedTasks = tasks.status.filter(function(){
+                return 3;
+            })
         }
     }
 });
