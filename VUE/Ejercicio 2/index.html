@@ -35,10 +35,22 @@
         <input type="checkbox" id="completed" value="Completed" v-model="checkedStatus">
         <label for="jack">Completed Tasks</label>
         <br>
-        <input type="checkbox" id="incompleted" value="Incompleted" v-model="checkedStatus">
+        <input type="checkbox" id="incompleted" value="Incompleted" v-model="checkedStatus"> 
         <label for="john">Incompleted Tasks</label>
-
+        
         <ul>
+            <li v-for="auxTask in checkedTask">
+                <h3>{{ auxTask.order }}</h3>
+                <p>Priority: {{ auxTask.priority }}</p>
+                <p>Date: {{ auxTask.date }}</p>
+                <p>Status: 
+                    <span v-if="auxTask.status">Completed</span>
+                    <span v-else>Not Completed</span>
+                </p>
+            </li>
+        </ul>
+
+        <!-- <ul>
             <li v-for="task in tasks">
                 <h3>{{ task.order }}</h3>
                 <p>Priority: {{ task.priority }}</p>
@@ -48,13 +60,9 @@
                     <span v-else>Not Completed</span>
                 </p>
             </li>
-        </ul>
-
-        <comp accion="cagarme encima"></comp>
+        </ul> -->
     </div>
 
-    
-    <template id="otro-template"><h1>Quiero echarme a {{ accion }}</h1></template>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
     <script src="./main.js"></script>
 </body>

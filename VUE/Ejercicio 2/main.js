@@ -22,8 +22,7 @@ var exercise2 = new Vue ({
         ],
         textNewTask: "",
         checkedStatus: [],
-        completedTasks: [],
-        incompletedTasks: []
+        auxTasks: []
     },
     methods: {
         newTask: function(event){
@@ -41,11 +40,28 @@ var exercise2 = new Vue ({
                 }
             }
             return count;
-        },
+        }
+    },
+    computed: {
         checkedTask: function(){
-            completedTasks = tasks.status.filter(function(){
-                return 3;
-            })
+            this.auxTasks = [];
+            for(let j=0; j<this.checkedStatus.length; j++){
+                if(this.checkedStatus[j] == "Completed"){
+                    for(let i=0; i<this.tasks.length; i++){
+                        if(this.tasks[i].status == true){
+                            this.auxTasks.push(this.tasks[i]);
+                        }
+                    }
+                }
+                if(this.checkedStatus[j] == "Incompleted"){
+                    for(let i=0; i<this.tasks.length; i++){
+                        if(this.tasks[i].status == false){
+                            this.auxTasks.push(this.tasks[i]);
+                        }
+                    }
+                }
+            }
+            return this.auxTasks;
         }
     }
 });
