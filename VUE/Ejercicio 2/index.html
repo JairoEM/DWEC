@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <title>Actividad 2 VUE</title>
 </head>
 <body>
@@ -12,15 +13,17 @@
 
     <div id="e2">
         <ul>
-            <li v-for="task in tasks">
-                <h3>{{ task.order }}</h3>
-                <p>Priority: {{ task.priority }}</p>
-                <p>Date: {{ task.date }}</p>
-                <p>Status: 
-                    <span v-if="task.status">Completed</span>
-                    <span v-else>Not Completed</span>
-                </p>
-            </li>
+            <transition name="" enter-active-class="animated bounceInLeft" leave-active-class="animated bounceOutRight"></transition>
+                <li v-for="task in tasks">
+                    <h3>{{ task.order }}</h3>
+                    <p>Priority: {{ task.priority }}</p>
+                    <p>Date: {{ task.date }}</p>
+                    <p>Status: 
+                        <span v-if="task.status">Completed</span>
+                        <span v-else>Not Completed</span>
+                    </p>
+                </li>
+            </transition>
         </ul>
 
         <h2>New Task</h2>
@@ -38,17 +41,21 @@
         <input type="checkbox" id="incompleted" value="Incompleted" v-model="checkedStatus"> 
         <label for="john">Incompleted Tasks</label>
         
-        <ul>
-            <li v-for="auxTask in checkedTask">
-                <h3>{{ auxTask.order }}</h3>
-                <p>Priority: {{ auxTask.priority }}</p>
-                <p>Date: {{ auxTask.date }}</p>
-                <p>Status: 
-                    <span v-if="auxTask.status">Completed</span>
-                    <span v-else>Not Completed</span>
-                </p>
-            </li>
-        </ul>
+        <!-- <transition name="" enter-active-class="animated bounceInLeft" leave-active-class="animated bounceOutRight"></transition> -->
+            <ul>
+            <!-- <transition name="" enter-active-class="animated bounceInLeft" leave-active-class="animated bounceOutRight"> -->
+                <li v-for="auxTask in checkedTask">
+                    <h3>{{ auxTask.order }}</h3>
+                    <p>Priority: {{ auxTask.priority }}</p>
+                    <p>Date: {{ auxTask.date }}</p>
+                    <p>Status: 
+                        <span v-if="auxTask.status">Completed</span>
+                        <span v-else>Not Completed</span>
+                    </p>
+                </li>
+            <!-- </transition> -->
+            </ul>
+        <!-- </transition> -->
 
         <!-- <ul>
             <li v-for="task in tasks">

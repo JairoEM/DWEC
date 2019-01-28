@@ -22,7 +22,8 @@ var exercise2 = new Vue ({
         ],
         textNewTask: "",
         checkedStatus: [],
-        auxTasks: []
+        auxTasks: [],
+        show: true
     },
     methods: {
         newTask: function(event){
@@ -64,4 +65,4 @@ var exercise2 = new Vue ({
             return this.auxTasks;
         }
     }
-});
+}); 
