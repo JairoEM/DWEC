@@ -24,6 +24,8 @@
     <script>
         $(function () {
             var socket = io();
+            var name = window.prompt("Insert your name:","");
+            socket.emit('nick', name);
             $('form').submit(function(e){
                 e.preventDefault(); // prevents page reloading
                 socket.emit('chat message', $('#m').val());
@@ -31,10 +33,13 @@
                 return false;
             });
             socket.on('chat message', function(msg){
-                $('#messages').append($('<li>').text(msg));
+                $('#messages').append($('<li>').text(msg.nick +": "+ msg.msg));
             });
-            socket.on('chat message', function(msg){
-                $('#typing').append($('<p>').text(msg));
+            socket.on('nickUser', function(user){
+                $('#messages'). append($('<li>').text("The user "+ user +" has connected."))
+            });
+            socket.on('nickOff', function(user){
+                $('#messages'). append($('<li>').text("The user "+ user +" has disconnected."))
             });
         });
     </script>

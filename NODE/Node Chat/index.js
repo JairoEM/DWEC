@@ -12,13 +12,19 @@ http.listen(3000, function(){
 
 io.on('connection', function(socket){
     console.log('a user connected');
-    socket.on('chat message', function(msg){
-        console.log('message: ' + msg);
-        io.emit('chat message', msg);
-        io.emit('typing' , 'Is typing...');
-    });
+    socket.on('nick', function(nick){
+      console.log('a user has been named as '+ nick);
+      socket.broadcast.emit('nickUser', nick);
+      socket.on('chat message', function(msg){
+        console.log(nick +': ' + msg);
+        io.emit('chat message', {
+          nick : nick, 
+          msg : msg});
+      });
 
-    socket.on('disconnect', function(){
-      console.log('user disconnected');
+      socket.on('disconnect', function(){
+        console.log('user disconnected');
+        socket.broadcast.emit('nickOff', nick);
+      });
     });
 });
